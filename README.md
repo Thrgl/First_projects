@@ -1,3 +1,3 @@
-# Monopoly_banka
+# CODİNG
 tahir in projeleri
 ilk kodlarım
