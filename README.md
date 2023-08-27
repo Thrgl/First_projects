@@ -1,3 +1,2 @@
-# Monopoly_banka
-tahir in projeleri
-ilk kodlarım
+# PROJECTS
+print("Tahir'in ilk projeleri")
