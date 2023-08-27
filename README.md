@@ -1,3 +1,2 @@
 # PROJECTS
-tahir in projeleri\n
-ilk kodlarım
+print("Tahir'in ilk projeleri")
