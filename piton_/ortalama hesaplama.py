@@ -191,6 +191,7 @@ for n in range(80):
 for n in range(0, olay_s):
     kelime = list(liste[n].Ders)
     for b in kelime:
+        print(b)
          
 # tablonun başlangıcı
 def başlangıç():
