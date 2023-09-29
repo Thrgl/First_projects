@@ -69,7 +69,7 @@ def soru1():
 
 def soru2():
     element = random.randint(0, len(birleşikler) - 1)
-    print("{} isminin formülü ne?".format(ismi[element]))
+    print("{} maddesinin formülü ne?".format(ismi[element]))
 
     A1 = str(birleşikler[random.randint(0, len(birleşikler) - 1)])
     A2 = str(birleşikler[random.randint(0, len(birleşikler) - 1)])
