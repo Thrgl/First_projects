@@ -12,6 +12,7 @@ def menu():
     cevap = input("            ")
 
 def soru1():
+    global m
     element = random.randint(0, len(birleşikler) - 1)
     print("{} formülünün adı ne?".format(birleşikler[element]))
 
@@ -42,32 +43,38 @@ def soru1():
     if şık == "A" or şık == "a":
         if başı2[0] == A4: 
             print("Doğru cavap\nDiğer soruya geçiliyor\n")
+            m -= 1
         else:
             print("cevabınız yanlış\nDoğru cevap {}\nDiğer soruya geçiliyor\n".format(A4))
     
     elif şık == "B" or şık == "b":
         if başı2[1] == A4: 
             print("Doğru cavap\nDiğer soruya geçiliyor\n")
+            m -= 1
         else:
             print("cevabınız yanlış\nDoğru cevap {}\nDiğer soruya geçiliyor\n".format(A4))
     
     elif şık == "C" or şık == "c":
         if başı2[2] == A4: 
             print("Doğru cavap\nDiğer soruya geçiliyor\n")
+            m -= 1
         else:
             print("cevabınız yanlış\nDoğru cevap {}\nDiğer soruya geçiliyor\n".format(A4))
            
     elif şık == "D" or şık == "d":
         if başı2[3] == A4: 
             print("Doğru cavap\nDiğer soruya geçiliyor\n")
+            m -= 1
         else:
             print("cevabınız yanlış\nDoğru cevap {}\nDiğer soruya geçiliyor\n".format(A4))    
     else:
-        print("cevabınız yanlış\nDoğru cevap {}\nDiğer soruya geçiliyor\n".format(A4))
+        print("Şıklardan birini seçin\nDoğru cevap {}\nDiğer soruya geçiliyor\n".format(A4))
 
 
 
 def soru2():
+    global m
+
     element = random.randint(0, len(birleşikler) - 1)
     print("{} maddesinin formülü ne?".format(ismi[element]))
 
@@ -95,33 +102,83 @@ def soru2():
 
 
     şık = input(str())
+
     if şık == "A" or şık == "a":
         if başı2[0] == A4: 
-            print("Doğru cavap\nDiğer soruya geçiliyor\n")
+            if t == 9:    
+                print("Doğru cavap\n")
+            else:
+                print("Doğru cavap\nDiğer soruya geçiliyor\n")
+            m -= 1
+
         else:
-            print("cevabınız yanlış\nDoğru cevap {}\nDiğer soruya geçiliyor\n".format(A4))
-    
+            if t == 9:
+                print("cevabınız yanlış\nDoğru cevap {}\n".format(A4))
+            else:
+                print("cevabınız yanlış\nDoğru cevap {}\nDiğer soruya geçiliyor\n".format(A4))
+
     elif şık == "B" or şık == "b":
         if başı2[1] == A4: 
-            print("Doğru cavap\nDiğer soruya geçiliyor\n")
+            if t == 9:    
+                print("Doğru cavap\n")
+            else:
+                print("Doğru cavap\nDiğer soruya geçiliyor\n")
+            m -= 1
+
         else:
-            print("cevabınız yanlış\nDoğru cevap {}\nDiğer soruya geçiliyor\n".format(A4))
+            if t == 9:
+                print("cevabınız yanlış\nDoğru cevap {}\n".format(A4))
+            else:
+                print("cevabınız yanlış\nDoğru cevap {}\nDiğer soruya geçiliyor\n".format(A4))
     
     elif şık == "C" or şık == "c":
         if başı2[2] == A4: 
-            print("Doğru cavap\nDiğer soruya geçiliyor\n")
+            if t == 9:    
+                print("Doğru cavap\n")
+            else:
+                print("Doğru cavap\nDiğer soruya geçiliyor\n")
+            m -= 1
+
         else:
-            print("cevabınız yanlış\nDoğru cevap {}\nDiğer soruya geçiliyor\n".format(A4))
+            if t == 9:
+                print("cevabınız yanlış\nDoğru cevap {}\n".format(A4))
+            else:
+                print("cevabınız yanlış\nDoğru cevap {}\nDiğer soruya geçiliyor\n".format(A4))
            
     elif şık == "D" or şık =="d":
         if başı2[3] == A4: 
-            print("Doğru cavap\nDiğer soruya geçiliyor\n")
-        else:
-            print("cevabınız yanlış\nDoğru cevap {}\nDiğer soruya geçiliyor\n".format(A4))    
-    else:
-        print("cevabınız yanlış\nDoğru cevap {}\nDiğer soruya geçiliyor\n".format(A4))
+            if t == 9:    
+                print("Doğru cavap\n")
+            else:
+                print("Doğru cavap\nDiğer soruya geçiliyor\n")
+            m -= 1
 
-menu()
+        else:
+            if t == 9:
+                print("cevabınız yanlış\nDoğru cevap {}\n".format(A4))
+            else:
+                print("cevabınız yanlış\nDoğru cevap {}\nDiğer soruya geçiliyor\n".format(A4))    
+    else:
+        if t == 9:
+            print("Lütfen Şıklardan birini seçin\nDoğru cevap {}\n".format(A4))
+        else:
+            print("Lütfen Şıklardan birini seçin\nDoğru cevap {}\nDiğer soruya geçiliyor\n".format(A4))
+
+def on_soru():
+    global m
+    global t
+    n = 100
+    m = 10
+    
+    for t in range(0, 10):
+        if t // 2 == 0:
+            soru1()
+        else:
+            soru2()
+
+    print("toplam puanın 100 üzerinden {} puan\n".format(n - (m*10)))
+
+
 while True:
-    soru1()
-    soru2()
+    menu()
+    on_soru()
