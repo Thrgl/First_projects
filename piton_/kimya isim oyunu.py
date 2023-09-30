@@ -1,4 +1,5 @@
 import random
+import time
 
 ismi = ["Çamaşır sodası", "Tuz ruhu", "Zaç yağı", "Kezzap", "Krom", "Kobalt", "Çinko", "Kalay", "Altın", "Demir", "Bakır", "Gümüş", "Baryum", "Kurşun", "Mangan", "Nikel", "Brom", "İyot", "Cıva", "Platin", "Sirke asiti", "Kireç Taşı", "Yemek sodası", "Amonyak", "Sönmüş kireç", "Sud kostik", "Potas kostik", "Sönmemiş Kireç", "Yemek tuzu", "Hidrojen", "Helyum", "Lityum", "Berilyum", "Bor", "Karbon", "Azot", "Oksijen", "Neon", "Sodyum", "Magnezyum", "Alüminyum", "Silisyum", "Fosfor", "Klor", "Argon", "Potasyum", "Kalsiyum"]
 birleşikler = ["NaClO", "HCl", "H2SO4", "HNO3", "Cr", "Co", "Zn", "Sn", "Au", "Fe", "Cu", "Ag", "Ba", "Pb", "Mn", "Ni", "Br", "I", "Hg", "Pt", "CH3COOH", "CaCO3", "NaHCO3", "NH2", "Ca(OH)2", "NaOH", "KOH", "CaO", "NaCl", "H", "He", "Li", "Be", "B", "C", "N",  "O", "Ne", "Na", "Mg", "Al", "Si", "P", "Cl", "Ar", "K", "Ca"]
@@ -169,14 +170,18 @@ def on_soru():
     global t
     n = 100
     m = 10
-    
+    başlangıç = time.time()
     for t in range(0, 10):
         if t // 2 == 0:
             soru1()
         else:
             soru2()
+    
+    bitiş = time.time()
 
-    print("toplam puanın 100 üzerinden {} puan\n".format(n - (m*10)))
+    süre = bitiş - başlangıç
+
+    print(f"toplam puanın 100 üzerinden {n-(m*10)} puan\nbunu {süre:.2f} dürede bitirdiniz")
 
 
 while True:
